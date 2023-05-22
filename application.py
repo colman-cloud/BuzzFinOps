@@ -47,7 +47,7 @@ application.secret_key = os.environ['CACHE_SECRET_KEY']
 application.config['SESSION_TYPE'] = 'redis'
 application.config['SESSION_PERMANENT'] = False
 application.config['SESSION_USE_SIGNER'] = True
-application.config['SESSION_REDIS'] = os.environ['REDIS_URI']
+application.config['SESSION_REDIS'] = redis.from_url(os.environ['REDIS_URI'])
 # Create and initialize the Flask-Session object AFTER `app` has been configured
 server_session = Session(application)
 
