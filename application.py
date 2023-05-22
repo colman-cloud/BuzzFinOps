@@ -65,7 +65,7 @@ if 'RDS_HOSTNAME' in os.environ:
     }
 
 # Configure production AWS MySQL RDS database
-application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://' + os.environ['RDS_USERNAME'] + ':' + os.environ['RDS_PASSWORD'] + '@' + os.environ['RDS_HOSTNAME'] + '/' + 
+application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://' + os.environ['RDS_USERNAME'] + ':' + os.environ['RDS_PASSWORD'] + '@' + os.environ['RDS_HOSTNAME'] + '/' + os.environ['RDS_PORT']
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(application)
