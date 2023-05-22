@@ -38,7 +38,7 @@ application.config['SESSION_REDIS'] = redis.from_url('redis://localhost:6379')
 server_session = Session(application)
 
 # Configure Flask to use local SQLite3 database with SQLAlchemy
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'finances.db')
+application.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DB_CS']
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(application)
